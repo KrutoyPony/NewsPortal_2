@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Вход {{request.user.username}}
+{% endblock %}
+
+{% block content %}
+<h2>Страница авторизованного пользователя {{request.user.username}}</h2>
+<div> Информации пока нету </div>
+
+<button> <a href="sign/logout/">Выйти</a> </button>
+
+{% if is_not_author %}
+<button> <a href="sign/upgrade/"> Стать автором!</a> </button>
+{% endif %}
+
+{% endblock %}
